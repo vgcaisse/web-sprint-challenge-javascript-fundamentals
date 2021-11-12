@@ -26,29 +26,44 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
-    - .map() :
-    - .reduce() :
-    - .filter() : 
+    - .reduce() : Use case: 
+                  Reduce can add a large set of data and give the average without going through each individual data set. i.e: looking for the average player score from an array of 100 players.
+                  
+                  Definition:
+                  .map() returns a single value not an array. Used for sums and products it takes 2 arguments: (accumulator) which is a running total and (item) which is the current element being processed initial value - where the equation starts 
+
+    - .map() :    Use case: 
+                  Map can add/create an array to a set of data with modifications (if any). i.e: adding 100 new players with lowercase names or lower casing an array of 100 players.
+                  
+                  Definition:
+                  .map() returns a new array automatically. .map() is used for converting data. Needs a return statement. whatever comes after the return statement gets included in the new array
+
+    - .filter() : Use case: 
+                  Filtering out a key from an array of data i.e: Looking for vacation spots with good wifi, .filter() would go through the array and look for an array key that is 
+                  true and add it to a new array.
+                  
+                  Definition:
+                  .filter() automatically returns a new array, it filters data into the new array. Needs a return statement / the return statement is the condition - if its true its included in the new array, if its false it now included. 
 
 2. Explain the difference between a callback and a higher order function.
 
-    - A call back functions are functions that are reused in higher order functions.  Higher order functions are functions that receive other functions(call back functions) as arguments.   
+    - Call back functions are functions that are reused in higher order functions.  Higher order functions are functions that receive other functions(call back functions) as arguments.   
 
 3. Explain what a closure is.
 
-    -
+    -  A closure happens when an inner function reaches into an outer function to grab a value defined in the outer function.
 
 4. Describe the four principles of the 'this' keyword.
 
     - When a constructor function is created pointing to the newly created object that is: new binding
     - when we use a .call, .apply, or .bind that is explicit binding
     - when none of the rules are being applied "this" will return a global object UNLESS told otherwise when defined in "strict mode," that is window binding
-    - When a function is invoked and we look to the left of the dot to check for reference that is implicit binding
+    - When a function is invoked and we look to the left of the dot to check for reference that is implicit binding, used in 80% use case
 
 5. Why do we need super() in an extended class?
 
-    - super()
-
+    - super() is used to inherit an extend and the extend tells super() what to super to. 
+    
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
