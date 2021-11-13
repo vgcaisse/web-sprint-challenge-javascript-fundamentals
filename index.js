@@ -28,8 +28,8 @@ myFunction();
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 const numbers = [1, 2, 3, 4];
 function summation(data) {
-  const total = data.reduce(function(acc, item){
-    return acc + item.length;
+  const total = data.reduce(function(acc, numbers){
+    return acc + numbers.length;
   },0);
   return total;
 }
@@ -58,20 +58,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*data*/){
-   /*Your Code Here*/
-    
-    // const aninames = data.forEach(item => data.push(`name: ${item.last_name}, scientific ${item.shirt_size}`)); //data.forEach(item => item.scientific_name && item.animal_name);     
+  function animalNames(data, item){
+   /*Your Code Here*/    
+    // const aninames = data.forEach(item => `name: ${item.animal_name}, scientific: ${item.scientific_name}`);      
     // return aninames;
-
-    // // runners.forEach(item => shirtOrder.push(`${item.last_name}, ${item.shirt_size}`));
-    // // const lowerAnimals = data.map(item => item.scientific_name.toLowerCase() && item.animal_name.toLowerCase());     
-    // // return lowerAnimals;
-
+    
     //YIKES THIS ONE WAS HARD DAMN!!!!!
   }
 
-  //console.log(animalNames(zooAnimals));
+  console.log(animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
