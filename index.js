@@ -55,15 +55,16 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(){
-  //   /*Your Code Here*/
-  //   zooAnimals.forEach(function(item){
-  //     names.push(`name: ${item.name}, scientific: ${item.scientific_name}`);
-  //     // item.state.toLowerCase()
-  //   });
+  function animalNames(data){
+   /*Your Code Here*/
+    const aninames = data.forEach(item => item.scientific_name && item.animal_name);     
+    return aninames;
+    // runners.forEach(item => shirtOrder.push(`${item.last_name}, ${item.shirt_size}`));
+    // const lowerAnimals = data.map(item => item.scientific_name.toLowerCase() && item.animal_name.toLowerCase());     
+    // return lowerAnimals;
   }
 
-  // console.log(animalNames(names));
+  console.log(animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -72,19 +73,25 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
+  function lowerCaseNames(data){
     /*Your Code Here*/
+    const lowerAnimals = data.map(item => item.scientific_name.toLowerCase() && item.animal_name.toLowerCase());     
+    return lowerAnimals;
   }
-  
+
+  console.log(lowerCaseNames(zooAnimals));
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(data) {
+    const lowPop = data.filter(item => item.population <= 5);     
+    return lowPop;
   }
+
+  console.log(lowPopulationAnimals(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
@@ -108,7 +115,10 @@ const zooAnimals = [
 
   function consume(a,b){
     /*Your Code Here */
-    return a, b;
+    // const cb = consume.map(a,b);
+    // return cb;
+    // const years = getFinalscb(data).map(item => item.Year);  
+    return a,b; 
   }
  
   
@@ -131,8 +141,9 @@ function multiply(a,b){
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
-function greeting(/*Your Code Here */){
-   return /*Your Code Here */
+function greeting(a,b){
+    /*Your Code Here */
+    return `Hello ${a} ${b}, nice to meet you!`
   }
   
   
@@ -140,7 +151,7 @@ function greeting(/*Your Code Here */){
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
   console.log(consume(2, 2, add)); // 4
   console.log(consume(10, 16, multiply)); // 160
-  // console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+  console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
 //🐴🐴🐴 Task: You are to build a cuboid maker that can return values for a cuboid's volume or surface area. Cuboids are similar to cubes but do not have even sides. Follow the steps in order to accomplish this challenge. 🐴🐴🐴
@@ -169,7 +180,7 @@ function CuboidMaker(attrs){
   2 * (length * width + length * height + width * height)  */
 
   CuboidMaker.prototype.surfaceArea = function() {
-    return this.length * this.width + this.length * this.height + this.width * this.height;
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
   }
 
 
@@ -178,7 +189,7 @@ function CuboidMaker(attrs){
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
-const cuboid = new CuboidMaker(4,5,5);
+const cuboid = new CuboidMaker({length: 4, width: 5, height: 5});
 
 
 
@@ -200,11 +211,11 @@ class CuboidMakerTwo{
     return this.length * this.width * this.height;
   }
   surfaceArea() {
-    return this.length * this.width + this.length * this.height + this.width * this.height;
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
   }
 }
 
-const cuboidTwo = new CuboidMaker(4,5,5);
+const cuboidTwo = new CuboidMakerTwo({length: 4, width: 5, height: 5});
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
 console.log(cuboidTwo.volume()); // 100
