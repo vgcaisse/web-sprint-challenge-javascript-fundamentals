@@ -27,13 +27,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 const numbers = [1, 2, 3, 4];
-function summation(numbers) {
-    numbers.reduce(function (previousValue, currentValue) {
-      return previousValue + currentValue;
-    }, 0);
-  }
+function summation(data) {
+  const total = data.reduce(function(acc, item){
+    return acc + item.length;
+  },0);
+  return total;
+}
 
-  console.log(summation);  
+console.log(summation(numbers));  
+
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
 
@@ -105,10 +107,15 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
+  function USApop(data){
     /*Your Code Here*/
+    const total = data.reduce(function(acc, item){
+      return acc + item.population;
+    },0);
+    return total;
   }
   
+  console.log(USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -118,12 +125,9 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(a,b){
-    /*Your Code Here */
-    // const cb = consume.map(a,b);
-    // return cb;
-    // const years = getFinalscb(data).map(item => item.Year);  
-    return a,b; 
+  function consume(a,b,cb){
+    /*Your Code Here */  
+    return cb(a,b); 
   }
  
   
@@ -132,7 +136,9 @@ const zooAnimals = [
   
 function add(a,b){
     /*Your Code Here*/
-    return a+b;
+    
+      return a+b;
+    
   }
 
 
