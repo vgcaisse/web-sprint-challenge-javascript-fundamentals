@@ -2,6 +2,8 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
+const { COMPLETIONSTATEMENT_TYPES } = require("@babel/types");
+
 const external = "I'm outside the function";
 
 function myFunction() {
@@ -16,10 +18,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
-
-
-
+// because of lexical scoping the nested function can access the internal variable but the internal variable can't access anything outside of its scope.
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:
@@ -27,12 +26,14 @@ myFunction();
     2. Use a counter to return the summation of that number. 
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
-
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+const numbers = [1, 2, 3, 4];
+function summation(numbers) {
+    numbers.reduce(function (previousValue, currentValue) {
+      return previousValue + currentValue;
+    }, 0);
   }
-  
+
+  console.log(summation);  
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
 
@@ -55,16 +56,20 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(data){
+  function animalNames(/*data*/){
    /*Your Code Here*/
-    const aninames = data.forEach(item => item.scientific_name && item.animal_name);     
-    return aninames;
-    // runners.forEach(item => shirtOrder.push(`${item.last_name}, ${item.shirt_size}`));
-    // const lowerAnimals = data.map(item => item.scientific_name.toLowerCase() && item.animal_name.toLowerCase());     
-    // return lowerAnimals;
+    
+    // const aninames = data.forEach(item => data.push(`name: ${item.last_name}, scientific ${item.shirt_size}`)); //data.forEach(item => item.scientific_name && item.animal_name);     
+    // return aninames;
+
+    // // runners.forEach(item => shirtOrder.push(`${item.last_name}, ${item.shirt_size}`));
+    // // const lowerAnimals = data.map(item => item.scientific_name.toLowerCase() && item.animal_name.toLowerCase());     
+    // // return lowerAnimals;
+
+    //YIKES THIS ONE WAS HARD DAMN!!!!!
   }
 
-  console.log(animalNames(zooAnimals));
+  //console.log(animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
